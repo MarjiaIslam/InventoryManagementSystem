@@ -1,125 +1,53 @@
-# Lab Test One: Full-Stack CRUD Application
+# Inventory Management System
 
-**Course:** Advanced Object-Oriented Programming  
-**Duration:** 1 hour  
-**Total Marks:** 10
+A Full-Stack CRUD application built with **Spring Boot (Backend)** and **React TypeScript (Frontend)**. 
 
----
+## 🚀 Project Overview
+This application allows users to manage a product inventory with a modern, user-friendly interface. It demonstrates complete End-to-End functionality including:
 
-## 📋 Overview
+- **Create:** Add new products (Name, Price, Quantity are mandatory; Category is optional).
+- **Read:** Toggle between a **Database List View** (Table) and a **Card View** (Grid).
+- **Update:** Edit existing product details.
+- **Delete:** Remove products from the inventory with confirmation.
 
-In this lab test, you will create a full-stack application demonstrating CRUD (Create, Read, Update, Delete) operations using **your own creative idea**. The application consists of:
+## 🛠 Tech Stack
+- **Backend:** Java 17, Spring Boot 3.4, H2 Database (In-Memory), Spring Data JPA.
+- **Frontend:** React 18, TypeScript, Vite, CSS Modules.
+- **Environment:** Docker-based GitHub Codespaces (DevContainer).
 
-1. **GitHub Codespaces Configuration** - Automated development environment setup
-2. **Frontend** - React with TypeScript for the user interface
-3. **Backend** - Spring Boot REST API for data management
+## ⚙️ How to Run in GitHub Codespaces
 
----
-
-## 🎯 Learning Objectives
-
-By completing this lab test, you will demonstrate your ability to:
-
-- Configure a complete development environment using GitHub Codespaces
-- Build a React TypeScript frontend application
-- Implement a Spring Boot REST API with full CRUD operations
-- Integrate frontend and backend components
-- Apply Object-Oriented Programming principles
-
----
-
-## 📝 Requirements
-
-### Part 1: GitHub Codespaces Configuration
-
-Configure the development environment to automatically set up all required tools and dependencies.
-
-**Deliverables:**
-- Development environment configuration that installs all necessary tools
-- Environment ready to run both frontend and backend applications
-
----
-
-### Part 2: Backend - Spring Boot REST API
-
-Create a backend application with REST API endpoints.
-
-**Deliverables:**
-- REST API with the following HTTP methods:
-  - GET (retrieve all resources)
-  - GET (retrieve single resource by ID)
-  - POST (create new resource)
-  - PUT (update entire resource)
-  - PATCH (partially update resource)
-  - DELETE (remove resource)
-- All endpoints must be functional
-
----
-
-### Part 3: Frontend - React TypeScript Application
-
-Create a frontend application with user interface.
-
-**Deliverables:**
-- User interface displaying all resources
-- Form for creating and updating resources
-- Functionality to delete resources
-- Complete integration with backend API
-
----
-
-## 🚀 Getting Started
-
-### Step 1: Fork This Repository
-1. Click the "Fork" button at the top right of this repository
-2. Clone your forked repository to your local machine or open it in GitHub Codespaces
-
-### Step 2: Open in GitHub Codespaces
-1. Click on "Code" → "Codespaces" → "Create codespace on main"
-2. Wait for the environment to initialize
-
-### Step 3: Implement Your Application
-Follow the requirements to build your application.
-
----
-
-## 📂 Expected Project Structure
-
-```
-advance-oop-tests/
-├── .devcontainer/
-│   └── devcontainer.json
-├── backend/
-│   └── (Spring Boot application files)
-├── frontend/
-│   └── (React TypeScript application files)
-├── README.md
-└── LAB_TEST_ONE.md
+### 1. Start the Backend
+Open the **Terminal** and run the following commands:
+```bash
+cd backend
+./mvnw spring-boot:run
 ```
 
----
+### 2. Start the Frontend
+Open a **New Terminal** (click the `+` icon) and run:
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-## ✅ Submission Guidelines
+### 3. Open the Application
+*   A popup will appear saying "Open in Browser". Click it.
 
-1. **Commit your code** to your forked repository
-2. **Push all changes** to GitHub
-3. **Share the repository link** with your instructor
-4. **Demonstrate your working application** to the instructor
+## 📡 API Endpoints (Backend)
+The Spring Boot backend exposes the following REST endpoints at `/api/products`:
 
-### Submission Checklist:
-- [ ] Development environment configured
-- [ ] Backend with all REST endpoints functional
-- [ ] Frontend with complete CRUD UI functional
-- [ ] Both applications run without errors
-- [ ] All CRUD operations work correctly
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/api/products` | Retrieve all products |
+| `GET` | `/api/products/{id}` | Retrieve a single product by ID |
+| `POST` | `/api/products` | Create a new product |
+| `PUT` | `/api/products/{id}` | Update an entire product |
+| `PATCH` | `/api/products/{id}` | Partially update a product |
+| `DELETE` | `/api/products/{id}` | Delete a product |
 
----
-
-## 📊 Grading Rubric
-
-This lab test is worth **10 marks** total. Your work will be evaluated based on:
-
-- GitHub Codespaces configuration completeness
-- Backend REST API functionality (all HTTP methods working)
-- Frontend UI implementation and backend integration
-- Overall application functionality
+## 🎨 Design & Assumptions
+- **Theme:** A customized theme was implemented for a cleaner, modern look compared to standard Bootstrap.
+- **User Experience:** A toggle was added to allow users to view data as a list (standard for admin tasks) or cards (visual preference).
+- **Data Validation:** Category was made optional to simulate real-world scenarios where grouping might not always be necessary, while Price and Quantity are strictly enforced.

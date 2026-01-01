@@ -1,0 +1,21 @@
+{
+  "name": "Java & React Environment",
+  "image": "mcr.microsoft.com/devcontainers/java:1-17-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "installMaven": "true",
+      "installGradle": "false"
+    }
+  },
+  "forwardPorts": [8080, 5173],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}

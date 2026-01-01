@@ -1,0 +1,219 @@
+:root {
+  --bg-color: #f8f7fa;       /* Very light lavender-grey */
+  --card-bg: #ffffff;
+  --primary: #8b5cf6;        /* Lavender/Purple */
+  --primary-hover: #7c3aed;  /* Darker Lavender */
+  --delete: #ef4444;         /* Red */
+  --text-main: #4c1d95;      /* Dark Purple Text */
+  --text-sub: #6b7280;       /* Grey Text */
+  --border: #e9d5ff;         /* Light Purple Border */
+  --shadow: 0 4px 20px -2px rgba(139, 92, 246, 0.1);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+/* --- Toggle Switcher --- */
+.view-toggles {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-toggle {
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--text-sub);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.btn-toggle.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* --- Form Styling --- */
+.form-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3rem;
+  border: 1px solid var(--border);
+}
+
+input {
+  padding: 12px 16px;
+  border: 1px solid #ddd6fe;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.2s;
+  flex: 1;
+  min-width: 150px;
+}
+
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+button.btn-main {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button.btn-main:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* --- LIST VIEW (Table) --- */
+.table-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #f3e8ff; /* Very light purple */
+  color: var(--text-main);
+  text-align: left;
+  padding: 16px;
+  font-weight: 700;
+}
+
+td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f3e8ff;
+  color: var(--text-main);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background-color: #faf5ff;
+}
+
+/* --- CARD VIEW (Grid) --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  padding-bottom: 50px;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.card h3 {
+  margin: 0 0 5px 0;
+  color: var(--text-main);
+}
+
+.category-badge {
+  background-color: #ede9fe;
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 12px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: var(--text-sub);
+  font-size: 0.9rem;
+}
+
+/* Action Buttons (Shared) */
+.action-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit, .btn-delete {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-edit {
+  background: #f3e8ff;
+  color: var(--primary);
+}
+.btn-edit:hover { background: #ddd6fe; }
+
+.btn-delete {
+  background: #fee2e2;
+  color: var(--delete);
+}
+.btn-delete:hover { background: #fecaca; }
