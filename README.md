@@ -21,7 +21,7 @@ This application allows users to manage a product inventory with a modern, user-
 Open the **Terminal** and run the following commands:
 ```bash
 cd backend
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 ### 2. Start the Frontend
