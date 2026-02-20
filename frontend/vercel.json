@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "inventorymanagementsystem-production-f8cd.up.railway.app/api/:path*"
+    }
+  ]
+}
